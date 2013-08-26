@@ -5,6 +5,11 @@ public class Coordinates {
 	private double latitude;
 	private double longitude;
 	
+	public Coordinates(double latitude, double longitude) {
+		setLatitude(latitude);
+		setLongitude(longitude);
+	}
+	
 	public double getLatitude() {
 		return latitude;
 	}

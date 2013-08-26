@@ -15,7 +15,7 @@ public class RouterTaskResult {
 		return routes;
 	}
 
-	public void addRoute(Route route) {
-		routes.add(route);
+	public void setRoutes(List<Route> routes) {
+		this.routes = routes;
 	}
 }
