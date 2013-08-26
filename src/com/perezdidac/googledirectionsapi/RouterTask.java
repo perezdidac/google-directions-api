@@ -262,9 +262,11 @@ public class RouterTask extends AsyncTask<RouteQuery, Void, RouterTaskResult> {
 			} while (b >= 0x20);
 			int dlng = ((result & 1) != 0 ? ~(result >> 1) : (result >> 1));
 			lng += dlng;
+			
+			double latitude = lat / 1E5;
+			double longitude = lng / 1E5;
 
-			coordinates.add(new Coordinates((lat * 1E6 / 1E5),
-					(int) (lng * 1E6 / 1E5)));
+			coordinates.add(new Coordinates(latitude, longitude));
 		}
 		
 		// Finally, return the list of coordinates into the Polyline object
