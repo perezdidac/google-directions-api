@@ -3,6 +3,8 @@ package com.perezdidac.googledirectionsapi;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.perezdidac.googledirectionsapi.routes.Route;
+
 public class RouterTaskResult {
 
 	private List<Route> routes;

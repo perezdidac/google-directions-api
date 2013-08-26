@@ -1,9 +1,12 @@
 package com.perezdidac.googledirectionsapi;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import com.perezdidac.googledirectionsapi.routes.Location;
+
 public class RouteQuery {
-	
+
 	private Location origin;
 	private Location destination;
 	private RouteQueryOptions routeQueryOptions;
@@ -12,39 +15,46 @@ public class RouteQuery {
 	public RouteQuery(Location origin, Location destination, RouteQueryOptions routeQueryOptions) {
 		setOrigin(origin);
 		setDestination(destination);
+		setWaypoints(new ArrayList<Location>());
 		setRouteQueryOptions(routeQueryOptions);
 	}
 
-	public RouteQuery(Location origin, Location destination, RouteQueryOptions routeQueryOptions, List<Location> waypoints) {
+	public RouteQuery(Location origin, Location destination,
+			List<Location> waypoints, RouteQueryOptions routeQueryOptions) {
 		setOrigin(origin);
 		setDestination(destination);
-		setRouteQueryOptions(routeQueryOptions);
 		setWaypoints(waypoints);
+		setRouteQueryOptions(routeQueryOptions);
 	}
 
-	public RouteQuery(List<Location> locations) {
+	public RouteQuery(List<Location> locations,
+			RouteQueryOptions routeQueryOptions) {
 		if (locations.size() > 1) {
-			origin = locations.get(0);
-			destination = locations.get(1);
+			setOrigin(locations.get(0));
+			setDestination(locations.get(1));
 		}
-		
-		for (int k = 2; k <locations.size(); ++k) {
+
+		List<Location> waypoints = new ArrayList<Location>();
+		for (int k = 2; k < locations.size(); ++k) {
 			waypoints.add(locations.get(k));
 		}
+
+		setWaypoints(waypoints);
+		setRouteQueryOptions(routeQueryOptions);
 	}
 
 	public Location getOrigin() {
 		return origin;
 	}
-	
+
 	public void setOrigin(Location origin) {
 		this.origin = origin;
 	}
-	
+
 	public Location getDestination() {
 		return destination;
 	}
-	
+
 	public void setDestination(Location destination) {
 		this.destination = destination;
 	}
@@ -56,7 +66,7 @@ public class RouteQuery {
 	public void setRouteQueryOptions(RouteQueryOptions routeQueryOptions) {
 		this.routeQueryOptions = routeQueryOptions;
 	}
-	
+
 	public List<Location> getWaypoints() {
 		return waypoints;
 	}
