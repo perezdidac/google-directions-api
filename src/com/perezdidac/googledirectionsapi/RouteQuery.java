@@ -29,8 +29,11 @@ public class RouteQuery {
 
 	public RouteQuery(List<Location> locations,
 			RouteQueryOptions routeQueryOptions) {
-		if (locations.size() > 1) {
+		if (locations.size() > 0) {
 			setOrigin(locations.get(0));
+			setDestination(locations.get(0));
+		}
+		if (locations.size() > 1) {
 			setDestination(locations.get(1));
 		}
 
