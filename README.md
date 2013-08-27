@@ -18,7 +18,9 @@ About
 =====
 
 Written by: Dídac Pérez Parera
+
 Company name: Tenea Tecnologías
+
 http://www.tenea.com/
 
 
