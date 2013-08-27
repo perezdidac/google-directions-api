@@ -11,14 +11,14 @@ Include it into your workspace, create a 'Router' object and then call 'queryRou
 Contribution
 ============
 
-Please feel free to contribute to the project
+Please feel free to contribute to the project.
 
 
 About
 =====
 
-Written by: DÃ­dac PÃ©rez Parera
-Company name: Tenea TecnologÃ­as
+Written by: Dídac Pérez Parera
+Company name: Tenea Tecnologías
 http://www.tenea.com/
 
 
