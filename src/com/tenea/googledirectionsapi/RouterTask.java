@@ -1,4 +1,4 @@
-package com.perezdidac.googledirectionsapi;
+package com.tenea.googledirectionsapi;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,16 +20,16 @@ import org.json.JSONObject;
 
 import android.os.AsyncTask;
 
-import com.perezdidac.googledirectionsapi.routes.Bounds;
-import com.perezdidac.googledirectionsapi.routes.Coordinates;
-import com.perezdidac.googledirectionsapi.routes.Distance;
-import com.perezdidac.googledirectionsapi.routes.Duration;
-import com.perezdidac.googledirectionsapi.routes.Leg;
-import com.perezdidac.googledirectionsapi.routes.Location;
-import com.perezdidac.googledirectionsapi.routes.Polyline;
-import com.perezdidac.googledirectionsapi.routes.Route;
-import com.perezdidac.googledirectionsapi.routes.Step;
-import com.perezdidac.googledirectionsapi.routes.Step.TravelMode;
+import com.tenea.googledirectionsapi.routes.Bounds;
+import com.tenea.googledirectionsapi.routes.Coordinates;
+import com.tenea.googledirectionsapi.routes.Distance;
+import com.tenea.googledirectionsapi.routes.Duration;
+import com.tenea.googledirectionsapi.routes.Leg;
+import com.tenea.googledirectionsapi.routes.Location;
+import com.tenea.googledirectionsapi.routes.Polyline;
+import com.tenea.googledirectionsapi.routes.Route;
+import com.tenea.googledirectionsapi.routes.Step;
+import com.tenea.googledirectionsapi.routes.Step.TravelMode;
 
 public class RouterTask extends AsyncTask<RouteQuery, Void, RouterTaskResult> {
 

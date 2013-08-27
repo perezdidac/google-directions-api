@@ -1,4 +1,4 @@
-package com.perezdidac.googledirectionsapi.routes;
+package com.tenea.googledirectionsapi.routes;
 
 import java.util.List;
 

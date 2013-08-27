@@ -1,9 +1,9 @@
-package com.perezdidac.googledirectionsapi;
+package com.tenea.googledirectionsapi;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.perezdidac.googledirectionsapi.routes.Location;
+import com.tenea.googledirectionsapi.routes.Location;
 
 public class RouteQuery {
 

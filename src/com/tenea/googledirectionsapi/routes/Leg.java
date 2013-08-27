@@ -1,30 +1,22 @@
-package com.perezdidac.googledirectionsapi.routes;
+package com.tenea.googledirectionsapi.routes;
+
+import java.util.List;
 
 
-
-public class Step {
-
-	public enum TravelMode {
-		TRAVEL_MODE_DRIVING,
-		TRAVEL_MODE_WALKING,
-		TRAVEL_MODE_BICYCLING,
-		TRAVEL_MODE_TRANSIT
-	}
+public class Leg {
 	
 	private Distance distance;
 	private Duration duration;
 	private Location origin;
 	private Location destination;
-	private Polyline polyline;
-	private TravelMode travelMode;
+	private List<Step> steps;
 	
-	public Step(Distance distance, Duration duration, Location origin, Location destination, Polyline polyline, TravelMode travelMode) {
+	public Leg(Distance distance, Duration duration, Location origin, Location destination, List<Step> steps) {
 		this.setDistance(distance);
 		this.setDuration(duration);
 		this.setOrigin(origin);
 		this.setDestination(destination);
-		this.setPolyline(polyline);
-		this.setTravelMode(travelMode);
+		this.setSteps(steps);
 	}
 
 	public Distance getDistance() {
@@ -59,20 +51,12 @@ public class Step {
 		this.destination = destination;
 	}
 
-	public Polyline getPolyline() {
-		return polyline;
+	public List<Step> getSteps() {
+		return steps;
 	}
 
-	public void setPolyline(Polyline polyline) {
-		this.polyline = polyline;
+	public void setSteps(List<Step> steps) {
+		this.steps = steps;
 	}
-
-	public TravelMode getTravelMode() {
-		return travelMode;
-	}
-
-	public void setTravelMode(TravelMode travelMode) {
-		this.travelMode = travelMode;
-	}
-
+	
 }

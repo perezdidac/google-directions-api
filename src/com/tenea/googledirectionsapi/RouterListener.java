@@ -1,8 +1,8 @@
-package com.perezdidac.googledirectionsapi;
+package com.tenea.googledirectionsapi;
 
 import java.util.List;
 
-import com.perezdidac.googledirectionsapi.routes.Route;
+import com.tenea.googledirectionsapi.routes.Route;
 
 public interface RouterListener {
 	
