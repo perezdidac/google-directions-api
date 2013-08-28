@@ -104,6 +104,7 @@ public class RouterTask extends AsyncTask<RouteQuery, Void, RouterTaskResult> {
 	private String buildUrl(RouteQuery routeQuery) {
 		Location origin = routeQuery.getOrigin();
 		Location destination = routeQuery.getDestination();
+		RouteQueryOptions routeQueryOptions = routeQuery.getRouteQueryOptions();
 		
 		// TODO: implement waypoints
 		@SuppressWarnings("unused")
@@ -124,8 +125,27 @@ public class RouterTask extends AsyncTask<RouteQuery, Void, RouterTaskResult> {
 		url += destination.getCoordinates().getLongitude();
 
 		// Set waypoints
-		// TODO: set waypoints
+		if (!waypoints.isEmpty()) {
+			url += "&waypoints=";
 
+			// Check if route must be optimized
+			if (routeQueryOptions.isOptimized()) {
+				url += "optimize:true%7C";
+			}
+			
+			// Loop through the waypoints
+			for (int k = 0; k < waypoints.size(); ++k) {
+				Location waypoint = waypoints.get(k);
+				url += waypoint.getCoordinates().getLatitude();
+				url += ',';
+				url += waypoint.getCoordinates().getLongitude();
+				
+				if (k + 1 < waypoints.size()) {
+					url += "%7C";
+				}
+			}
+		}
+		
 		// Set route options
 		// TODO: set route options
 		url += "&sensor=true&mode=driving";
