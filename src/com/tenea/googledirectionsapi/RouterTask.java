@@ -106,8 +106,7 @@ public class RouterTask extends AsyncTask<RouteQuery, Void, RouterTaskResult> {
 		Location destination = routeQuery.getDestination();
 		RouteQueryOptions routeQueryOptions = routeQuery.getRouteQueryOptions();
 		
-		// TODO: implement waypoints
-		@SuppressWarnings("unused")
+		// Waypoints
 		List<Location> waypoints = routeQuery.getWaypoints();
 
 		String url = DIRECTIONS_URL;
