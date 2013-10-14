@@ -88,9 +88,11 @@ public class RouterTask extends AsyncTask<RouteQuery, Void, RouterTaskResult> {
 
 			// Set the routes
 			result.setRoutes(routes);
+			result.setResponse(response);
 		} catch (Exception e) {
 			// Some error has occurred
 			result.setRoutes(new ArrayList<Route>());
+			result.setResponse("");
 		}
 
 		return result;
@@ -98,7 +100,8 @@ public class RouterTask extends AsyncTask<RouteQuery, Void, RouterTaskResult> {
 
 	protected void onPostExecute(RouterTaskResult result) {
 		List<Route> routes = result.getRoutes();
-		routerTaskListener.onRoutesReceived(routes);
+		String response = result.getResponse();
+		routerTaskListener.onRoutesReceived(routes, response);
 	}
 
 	private String buildUrl(RouteQuery routeQuery) {
@@ -152,7 +155,7 @@ public class RouterTask extends AsyncTask<RouteQuery, Void, RouterTaskResult> {
 		return url;
 	}
 
-	private List<Route> getRoutes(String response) {
+	public List<Route> getRoutes(String response) {
 		List<Route> routes = new ArrayList<Route>();
 
 		// Parse the received JSON data

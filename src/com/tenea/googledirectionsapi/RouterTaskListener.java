@@ -34,5 +34,5 @@ import com.tenea.googledirectionsapi.routes.Route;
 
 public interface RouterTaskListener {
 
-	public void onRoutesReceived(List<Route> routes);
+	public void onRoutesReceived(List<Route> routes, String response);
 }

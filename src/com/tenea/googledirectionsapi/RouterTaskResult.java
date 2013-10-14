@@ -36,6 +36,7 @@ import com.tenea.googledirectionsapi.routes.Route;
 public class RouterTaskResult {
 
 	private List<Route> routes;
+	private String response;
 
 	public RouterTaskResult() {
 		routes = new ArrayList<Route>();
@@ -47,5 +48,13 @@ public class RouterTaskResult {
 
 	public void setRoutes(List<Route> routes) {
 		this.routes = routes;
+	}
+
+	public String getResponse() {
+		return response;
+	}
+
+	public void setResponse(String response) {
+		this.response = response;
 	}
 }

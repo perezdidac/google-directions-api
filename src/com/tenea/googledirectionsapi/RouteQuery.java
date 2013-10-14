@@ -24,7 +24,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 The views and conclusions contained in the software and documentation are those of the
 authors and should not be interpreted as representing official policies, either expressed
 or implied, of TENEA TECNOLOGÍAS.
-*/
+ */
 
 package com.tenea.googledirectionsapi;
 
@@ -47,16 +47,15 @@ public class RouteQuery {
 		setRouteQueryOptions(routeQueryOptions);
 	}
 
-	public RouteQuery(Location origin, Location destination,
-			List<Location> waypoints, RouteQueryOptions routeQueryOptions) {
+	public RouteQuery(Location origin, Location destination, List<Location> waypoints,
+			RouteQueryOptions routeQueryOptions) {
 		setOrigin(origin);
 		setDestination(destination);
 		setWaypoints(waypoints);
 		setRouteQueryOptions(routeQueryOptions);
 	}
 
-	public RouteQuery(List<Location> locations,
-			RouteQueryOptions routeQueryOptions) {
+	public RouteQuery(List<Location> locations, RouteQueryOptions routeQueryOptions) {
 		if (locations.size() > 0) {
 			setOrigin(locations.get(0));
 			setDestination(locations.get(0));

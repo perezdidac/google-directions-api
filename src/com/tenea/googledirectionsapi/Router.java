@@ -46,14 +46,21 @@ public class Router implements RouterTaskListener {
 		
 		routerTask.execute(routeQuery);
 	}
+	
+	public void fromResponse(String response) {
+		List<Route> routes = routerTask.getRoutes(response);
+		if (routes != null) {
+			routerListener.onRoutesReceived(routes, response);
+		}
+	}
 
 	@Override
-	public void onRoutesReceived(List<Route> routes) {
+	public void onRoutesReceived(List<Route> routes, String response) {
 		if (!routes.isEmpty()) {
-			routerListener.onRoutesReceived(routes);
+			routerListener.onRoutesReceived(routes, response);
 		} else {
 			routerListener.onRoutesError();
 		}
 	}
-	
+
 }
